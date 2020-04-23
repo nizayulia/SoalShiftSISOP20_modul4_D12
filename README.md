@@ -16,6 +16,7 @@ Samsu Dhuha   05111840000155
 #### d.	Setiap pembuatan direktori terenkripsi baru (mkdir ataupun rename) akan tercatat ke sebuah database/log berupa file.
 #### e.	Semua file yang berada dalam direktori ter enkripsi menggunakan caesar cipher dengan key.
 <blockquote> 9(ku@AW1[Lmvgax6q`5Y2Ry?+sF!^HKQiBXCUSe&0M.b%rI'7d)o4~VfZ*{#:}ETt$3J-zpc]lnh8,GwP_ND|jO </blockquote>
+
 #### f.	Metode enkripsi pada suatu direktori juga berlaku kedalam direktori lainnya yang ada didalamnya.
 
 
