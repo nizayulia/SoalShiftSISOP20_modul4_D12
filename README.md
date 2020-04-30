@@ -67,3 +67,29 @@ c.	Untuk log level WARNING, merupakan pencatatan log untuk syscall rmdir dan unl
 
 d.	Sisanya, akan dicatat dengan level INFO.
 
+
+
+Untuk log level WARNING, merupakan pencatatan log untuk syscall rmdir dan unlink :
+```
+
+void writeWarning(char * str){
+	FILE * logFile = fopen("/home/yulia/fs.log", "a");
+	time_t t;
+	struct tm * timeinfo;
+	time ( &t );
+	timeinfo = localtime (&t);
+	fprintf(logFile, "WARNING::%02d%02d%d-%02d:%02d:%02d::%s\n", timeinfo->tm_year-100, timeinfo->tm_mon+1, timeinfo->tm_mday, timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec, str);
+	fclose(logFile);
+}
+
+```
+
+- Membuat berkas dengan nama fs.log pada home/yulia/fs.log dengan perintah ``` FILE * logFile = fopen("/home/yulia/fs.log", "a") ``` yakni membuka file fs.log dengan mode "a" yang dapat digunakan untuk create, append dan write.
+- time_t merepresentasikan calendar time. 
+- localtime(&t) berguna untuk mengambil argument tipe data time_t.
+
+
+
+Untuk log level INFO :
+
+
