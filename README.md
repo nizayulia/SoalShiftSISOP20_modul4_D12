@@ -75,10 +75,9 @@ Untuk log level WARNING, merupakan pencatatan log untuk syscall rmdir dan unlink
 void writeWarning(char * str){
 	FILE * logFile = fopen("/home/yulia/fs.log", "a");
 	time_t t;
-	struct tm * timeinfo;
 	time ( &t );
-	timeinfo = localtime (&t);
-	fprintf(logFile, "WARNING::%02d%02d%d-%02d:%02d:%02d::%s\n", timeinfo->tm_year-100, timeinfo->tm_mon+1, timeinfo->tm_mday, timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec, str);
+	struct tm * timeinfo = localtime (&t);
+	fprintf(logFile, "WARNING::%02d%02d%02d-%02d:%02d:%02d::%s\n", timeinfo->tm_year-100, timeinfo->tm_mon+1, timeinfo->tm_mday, timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec, str);
 	fclose(logFile);
 }
 
@@ -91,5 +90,17 @@ void writeWarning(char * str){
 
 
 Untuk log level INFO :
+```
+void writeInfo(char * str){
+	FILE * logFile = fopen("/home/yulia/fs.log", "a");
+	time_t t;
+	time ( &t );
+	struct tm * timeinfo = localtime (&t);
+	fprintf(logFile, "INFO::%02d%02d%02d-%02d:%02d:%02d::%s\n", timeinfo->tm_year-100, timeinfo->tm_mon+1, timeinfo->tm_mday, timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec, str);
+	fclose(logFile);
+}
 
+```
+
+Sama seperti warning, untuk level info semua tercatat disini kecuali unlink dan rmdir
 
